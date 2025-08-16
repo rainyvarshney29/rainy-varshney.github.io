@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotechnology Portfolio | University Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&family=Raleway:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c6fbb;
+            --secondary: #2e8b57;
+            --accent: #8b5cf6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --campus: #d4edda;
+            --lab: #e0f7fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: linear-gradient(to bottom, #f0f8ff, #e6f7ff);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+            margin-top: 60px; /* Fixed positioning */
+        }
+        
+        .hero h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            color: var(--dark);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            max-width: 600px;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(44, 111, 187, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(44, 111, 187, 0.4);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .btn:hover::after {
+            opacity: 1;
+        }
+        
+        /* Profile Image */
+        .profile-container {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+            border: 5px solid white;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .profile-container img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 5px;
+        }
+        
+        .section-header p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 30px auto 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Experience */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .experience-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .experience-card:hover .experience-image img {
+            transform: scale(1.1);
+        }
+        
+        .experience-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+        }
+        
+        .experience-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-overlay .date {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .experience-content {
+            padding: 30px;
+        }
+        
+        .experience-content ul {
+            list-style-type: none;
+        }
+        
+        .experience-content li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .experience-content li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Projects */
+        .projects {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .project-highlight {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            margin-bottom: 60px;
+            animation: fadeIn 1s ease;
+        }
+        
+        .project-image {
+            flex: 1;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .project-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .project-content h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .project-content .date {
+            background: var(--gradient);
+            color: white;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .project-content ul {
+            margin-top: 20px;
+            list-style-type: none;
+        }
+        
+        .project-content li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .project-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+            padding: 100px 0;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .skill-category {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--primary);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-category h3 i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .skill-category ul {
+            list-style-type: none;
+        }
+        
+        .skill-category li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .skill-category li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        /* Achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .achievement-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .achievement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .achievement-card:hover .achievement-image img {
+            transform: scale(1.1);
+        }
+        
+        .achievement-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .achievement-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .achievement-content p {
+            color: var(--dark);
+        }
+        
+        /* Leadership Section */
+        .leadership-section {
+            background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+            padding: 100px 0;
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .leadership-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .leadership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .leadership-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .leadership-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .leadership-card:hover .leadership-image img {
+            transform: scale(1.1);
+        }
+        
+        .leadership-content {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .leadership-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .leadership-content p {
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .footer-about {
+            flex: 2;
+            min-width: 300px;
+            margin-right: 50px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(-50%) translateX(0);
+            }
+            50% {
+                transform: translateY(-55%) translateX(10px);
+            }
+            100% {
+                transform: translateY(-50%) translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .profile-container {
+                position: relative;
+                width: 70%;
+                max-width: 400px;
+                margin: 50px auto 0;
+                right: auto;
+                top: auto;
+                transform: none;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .project-highlight {
+                flex-direction: column;
+            }
+            
+            .project-image {
+                min-height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">BioJourney</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforming <span>Biotechnology</span> Through Innovation</h1>
+                <p>Final-year BTech Biotechnology student skilled in bioinformatics and core lab techniques, integrating computational and experimental research to deliver impactful solutions.</p>
+                <a href="#experience" class="btn">Explore My Journey</a>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="profile-container">
+                <img src="profile.jpeg" 
+                     alt="Professional Profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>My research internships and hands-on training in biotechnology</p>
+            </div>
+            
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="muu.jpeg" alt="Mahindra University Internship">
+                        <div class="experience-overlay">
+                            <h3>Summer Intern</h3>
+                            <div class="date">Mahindra University, Hyderabad | Jun 2025–Jul 2025</div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Trained in omics, genome assembly, and RNA-Seq analysis using FastQC, HISAT2, DESeq2, QUAST, GSEA, and Enrichr</li>
+                            <li>Applied machine learning for CRISPR gRNA efficiency prediction achieving ~94% accuracy with Random Forest models</li>
+                            <li>Hands-on experience in molecular docking, protein modelling (AlphaFold2, Chimera), molecular dynamics (GROMACS), and network biology</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="raav.jpeg" alt="RAAV Tech Labs Internship">
+                        <div class="experience-overlay">
+                            <h3>R&D Intern</h3>
+                            <div class="date">RAAV Tech Labs, Delhi | May 2023–Jul 2023</div>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <ul>
+                            <li>Conducted NIR spectroscopy-based research on fruits and commodities, analyzing brix, acidity, moisture, and nutritional parameters</li>
+                            <li>Operated AONIR technology to scan mangoes, bananas, apples, pomegranates, tomatoes, and honey</li>
+                            <li>Explored applications of NIR spectroscopy for honey analysis and extended its scope to coffee, soy, and mustard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Projects</h2>
+                <p>Key academic and research initiatives I've led or contributed to</p>
+            </div>
+            
+            <div class="project-highlight">
+                <div class="project-image" style="background-image: url('lc.jpg');"></div>
+                <div class="project-content">
+                    <h3>Lung Cancer Biomarker Identification</h3>
+                    <div class="date">Jan 2025 – May 2025</div>
+                    <p>Integrative Bioinformatics and Machine Learning Strategy</p>
+                    <ul>
+                        <li>Integrated 10 public gene expression datasets for biomarker discovery</li>
+                        <li>Identified potential diagnostic genes for early detection and precision therapies</li>
+                        <li>Presented framework at BSSF-RIS Conference, Gujarat (2025)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-highlight">
+                <div class="project-content">
+                    <h3>RNA Sequencing Data Analysis</h3>
+                    <div class="date">Aug 2024 – Dec 2024</div>
+                    <p>Corneal Epithelium Research</p>
+                    <ul>
+                        <li>Analyzed RNA-Seq data using DESeq2 in Galaxy Web Server</li>
+                        <li>Conducted pathway and GO analysis to highlight therapeutic targets</li>
+                        <li>Presented findings at BSSF-RIS Conference, Gujarat (2025)</li>
+                    </ul>
+                </div>
+                <div class="project-image" style="background-image: url('kccc.png');"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <p>Technical competencies developed through academic and research experiences</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-dna"></i> Bioinformatics & Data Analysis</h3>
+                    <ul>
+                        <li>RNA-Seq (FastQC, HISAT2, STAR, DESeq2, QUAST, GSEA, Enrichr)</li>
+                        <li>GEO2R</li>
+                        <li>Genome assembly and analysis</li>
+                        <li>Differential gene expression analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Computational Tools & Programming</h3>
+                    <ul>
+                        <li>R, Weka, Python (basic)</li>
+                        <li>AlphaFold2, Chimera, GROMACS</li>
+                        <li>Discovery Studio, AutoDock, Dockey</li>
+                        <li>Cytoscape, STRING</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-flask"></i> Laboratory Techniques</h3>
+                    <ul>
+                        <li>PCR, Gel Electrophoresis, SDS-PAGE</li>
+                        <li>Chromatography, Enzyme Assays</li>
+                        <li>UV-Vis Spectroscopy</li>
+                        <li>NIR spectroscopy-based research</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning in Biology</h3>
+                    <ul>
+                        <li>Feature extraction and selection</li>
+                        <li>Model building (Random Forest, SVM)</li>
+                        <li>Model evaluation and validation</li>
+                        <li>CRISPR gRNA efficiency prediction</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Other Skills</h3>
+                    <ul>
+                        <li>MS Office Suite</li>
+                        <li>Data visualization</li>
+                        <li>Scientific presentation</li>
+                        <li>Research documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2>Achievements</h2>
+                <p>Recognitions and accomplishments during my academic journey</p>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="yoga_champion.jpg" alt="Yoga Achievement">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>National Yoga Champion</h3>
+                        <p>Champion of Champions at UYSF Delhi State Yoga Championship 2025</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="Conference.jpg" alt="Conference Presentation">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Conference Presenter</h3>
+                        <p>Presented research at BSSF-RIS Conference, Gujarat (2025)</p>
+                    </div>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <img src="hultprize.jpeg" alt="Hult Prize">
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Hult Prize Runner-up</h3>
+                        <p>1st Runner-up, Hult Prize at NIIT University (2022)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Leadership Experience</h2>
+                <p>Positions of responsibility during my university journey</p>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src="leadership1.jpg" alt="NSS Coordinator">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>NSS Coordinator</h3>
+                        <p>Directed social outreach programs and awareness campaigns at NIIT University (Jan-May 2025)</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src="images/leadership2.jpg" alt="Green House Captain">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Green House Captain</h3>
+                        <p>Managed campus sustainability initiatives and environmental programs (2024-2025)</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src="images/leadership3.jpg" alt="AIESEC Core Member">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>AIESEC Core Member</h3>
+                        <p>Organized cultural exchange programs and leadership development sessions (2024)</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src= "leadership4.jpeg" alt="Teaching Assistant">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Teaching Assistant</h3>
+                        <p>Assisted in HSS Department courses; guided students and managed documentation (Jan-May 2023)</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src="leadership5.jpeg" alt="Resonance Captain">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Resonance Captain</h3>
+                        <p>Led 3-week induction program for 150 juniors; managed mentoring and event logistics</p>
+                    </div>
+                </div>
+                
+                <div class="leadership-card">
+                    <div class="leadership-image">
+                        <img src="leadership6.jpeg"> alt="Yoga Club Coordinator">
+                    </div>
+                    <div class="leadership-content">
+                        <h3>Yoga Club Coordinator</h3>
+                        <p>Organized yoga sessions and wellness programs for university community (2023-present)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">BioJourney</div>
+                    <p>Biotechnology graduate specializing in bioinformatics, computational biology, and research with a passion for innovative solutions in healthcare and life sciences.</p>
+                    <p>Currently pursuing BTech in Biotechnology at NIIT University with a CGPA of 9.57.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Biotechnology Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.experience-card, .achievement-card, .project-highlight, .leadership-card, .skill-category').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
